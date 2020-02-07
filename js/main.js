@@ -31,10 +31,10 @@ startBtn.addEventListener('click', function(e) {
 	countBudgetBtn.disabled = false;
 
 	while (typeof(time) != 'string' || time == null || time == '') {
-		time = prompt("Введдите дату в формате YYYY-MM-DD", '');
+		time = prompt("Enter the date in the format YYYY-MM-DD", '');
 	}
 	while (isNaN(money) || money == '' || money == null) {
-		money = +prompt("Ваш бюджет на месяц?", '');
+		money = +prompt("What is your monthly budget?", '');
 	}
 	appData.budjet = money;
 	appData.timeData = time;
@@ -78,16 +78,16 @@ countBudgetBtn.addEventListener('click', function() {
 		daybudgetValue.textContent = appData.moneyPerDay;
 
 		if (appData.moneyPerDay < 100) {
-			valueLevel.textContent = "Минимальный достаток";
+			valueLevel.textContent = "Lower income";
 		} else if (100 < appData.moneyPerDay && appData.moneyPerDay < 2000) {
-			valueLevel.textContent = "Средний достаток";
+			valueLevel.textContent = "Middle income";
 		} else if (appData.moneyPerDay > 2000) {
-			valueLevel.textContent = "Высокий достаток";
+			valueLevel.textContent = "Upper class";
 		} else {
-			valueLevel.textContent = "Ошибка ввода";
+			valueLevel.textContent = "Input error";
 		}
 	} else {
-		alert("Пожалуйста начните расчет");
+		alert("Please click on 'Start calculation'");
 	}
 });
 
